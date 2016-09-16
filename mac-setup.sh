@@ -31,23 +31,22 @@ fi" > ~/.bash_profile
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install homebrew tools
-brew install \
-bash-completion \
-curl \
-carthage \
-cloc \
-cmake \
-git \
-gpg \
-imagemagick \
-keybase \
-ninja \
-rbenv \
-sourcekitten \
-swiftlint \
-the_silver_searcher \
-wget \
-xcproj
+brew install bash-completion
+brew install curl
+brew install carthage
+brew install cloc
+brew install cmake
+brew install git
+brew install gpg
+brew install imagemagick
+brew install keybase
+brew install ninja
+brew install rbenv
+brew install sourcekitten
+brew install swiftlint
+brew install the_silver_searcher
+brew install wget
+brew install xcproj
 
 # optional: mogenerator, mitmproxy, privoxy, oclint, jenkins, android-sdk, tinyproxy,
 
@@ -55,30 +54,29 @@ xcproj
 brew tap caskroom/cask
 
 # install casks
-brew cask install \
-atom \
-appcode \
-brave \
-caffeine \
-dash \
-disk-inventory-x \
-firefox \
-flux \
-font-awesome-terminal-fonts \
-font-fira-code \
-font-hack \
-font-inconsolata \
-github-desktop \
-iterm2 \
-keepassx \
-p4merge \
-phpstorm \
-postman \
-quickradar \
-slack \
-textual \
-wwdc \
-xquartz
+brew cask install atom
+brew cask install appcode
+brew cask install brave
+brew cask install caffeine
+brew cask install dash
+brew cask install disk-inventory-x
+brew cask install firefox
+brew cask install flux
+brew cask install font-awesome-terminal-fonts
+brew cask install font-fira-code
+brew cask install font-hack
+brew cask install font-inconsolata
+brew cask install github-desktop
+brew cask install iterm2
+brew cask install keepassx
+brew cask install p4merge
+brew cask install phpstorm
+brew cask install postman
+brew cask install quickradar
+brew cask install slack
+brew cask install textual
+brew cask install wwdc
+brew cask install xquartz
 # optional: macdown
 
 # install apps manually
