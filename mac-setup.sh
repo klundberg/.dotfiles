@@ -43,7 +43,6 @@ imagemagick \
 keybase \
 ninja \
 rbenv \
-rsync \
 sourcekitten \
 swiftlint \
 the_silver_searcher \
