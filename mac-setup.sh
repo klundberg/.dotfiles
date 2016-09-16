@@ -61,6 +61,7 @@ atom \
 appcode \
 brave \
 caffeine \
+dash \
 disk-inventory-x \
 firefox \
 flux \
@@ -72,8 +73,10 @@ github-desktop \
 iterm2 \
 keepassx \
 p4merge \
+phpstorm \
 postman \
 quickradar \
+slack \
 textual \
 wwdc \
 xquartz
@@ -82,15 +85,12 @@ xquartz
 # install apps manually
 # BetterSnapTool
 # CCMenu
-# Dash
 # Deckset
 # Dropbox/Sync
 # Fabric
 # JenkinsStatusItem
-# PHPStorm
 # Safari Tech Preview
 # Server.app
-# Slack
 # SourceTree
 # Spotify
 # TorBrowser
@@ -113,6 +113,7 @@ gem install \
 badge \
 cocoapods \
 fastlane \
+rubocop \
 synx \
 xcode-install
 # optional: danger
