@@ -3,6 +3,7 @@
 # create links
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/bashrc ~/.bashrc
+ln -s ~/.dotfiles/atom/packages.cson ~/.atom/packages.cson
 
 # write custom bash profile per-environment
 echo "Choose your environment:"
@@ -52,6 +53,7 @@ brew install xcproj
 
 # install caskroom
 brew tap caskroom/cask
+brew tap caskroom/fonts
 
 # install casks
 brew cask install atom
@@ -109,6 +111,7 @@ rbenv global 2.0.0-p648
 gem install \
 badge \
 cocoapods \
+cocoapods-dependencies \
 fastlane \
 rubocop \
 synx \
