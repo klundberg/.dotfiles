@@ -18,6 +18,7 @@ if [ "$LOCATION" == "Work" ]; then
   source $HOME/.virtualenvs/wayrunner/bin/activate
   alias wr='wayrunner'
   eval "$(_WAYRUNNER_COMPLETE=source wayrunner)"
+
   alias rbt-ios='rbt post -g -o --target-groups=iOS'
 
   export VAGRANT_HOST_SOURCE_PATH=$HOME/workspaces

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# reminder to install other things
+# 1. update github private ssh key
+
 # create links
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/bashrc ~/.bashrc
@@ -8,10 +11,7 @@ ln -s ~/.dotfiles/atom/packages.cson ~/.atom/packages.cson
 # write custom bash profile per-environment
 echo "Choose your environment:"
 select myenv in "Home" "Work"; do
-    case $myenv in
-        Home ) LOCATION=Home; break;;
-        Work ) LOCATION=Work; break;;
-    esac
+    Location=$myenv
 done
 
 # backup old profile just in case
@@ -118,5 +118,4 @@ synx \
 xcode-install
 # optional: danger
 
-# reminder to install other things
-# 1. update github private ssh key
+source ~/.bash_profile
