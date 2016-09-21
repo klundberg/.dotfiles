@@ -3,30 +3,12 @@
 # reminder to install other things
 # 1. update github private ssh key
 
-# create links
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/bashrc ~/.bashrc
-ln -s ~/.dotfiles/atom/packages.cson ~/.atom/packages.cson
+# Get running directory of script so we can call other scripts in the same dir.
+ORIGINAL_DIR=$(pwd)
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $ORIGINAL_DIR
 
-# write custom bash profile per-environment
-echo "Choose your environment:"
-select myenv in "Home" "Work"; do
-    Location=$myenv
-done
-
-# backup old profile just in case
-if [ -f ~/.bash_profile ]; then
-  mv ~/.bash_profile ~/.bash_profile_old
-fi
-
-# write new profile
-echo "#!/bin/bash
-
-export LOCATION=$LOCATION
-
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi" > ~/.bash_profile
+$DIR/update-settings.sh
 
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
