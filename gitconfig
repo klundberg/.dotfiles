@@ -24,13 +24,13 @@
 	detrain = ! git branch --list | grep deploy_ | xargs git branch -d
 [user]
 	name = Kevin Lundberg
-	email = kevin@klundberg.com
+	email = klundberg@wayfair.com
 [color]
 	ui = true
 [branch]
 	autosetuprebase = always
 [core]
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = /Users/klundberg/.dotfiles/gitignore_global
 [difftool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
 [merge]
@@ -59,3 +59,9 @@
 	enabled = true
 [fetch]
 	prune = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
