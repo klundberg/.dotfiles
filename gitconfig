@@ -15,13 +15,15 @@
 	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	mt = mergetool
 	a = add -p
-	dmb = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop | grep -v hotfix | grep -v release | xargs -n 1 git branch -d
+	dmb = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop | grep -v "^hotfix-.*" | grep -v "^release-.*" | xargs -n 1 git branch -d
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 	trains = !"echo 'Fetching...' && git fetch -q && echo ' DONE' && git for-each-ref --count=5 --sort=-committerdate --format='%(committerdate:relative) %09 %(refname:short)' refs/remotes/origin/deploy_$(date +%Y_%m_%d)_*"
 	train = !"git fetch -q && git for-each-ref --count=1 --sort=-committerdate --format='%(refname:short)' refs/remotes/origin/deploy_*"
 	board = !"git train | xargs git checkout -t"
-	couple = ! git board && git merge --squash
-	detrain = ! git branch --list | grep deploy_ | xargs git branch -d
+	couple = !git board && git merge --squash
+	detrain = !git branch --list | grep deploy_ | xargs git branch -d
+	dmbr = !git branch -r --merged | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$" | grep -v "^hotfix-" | grep -v "^release-" | xargs -n 1 git push -d origin
+	mbr = !git branch -r --merged | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$" | grep -v "^hotfix-" | grep -v "^\\s*release-" | sed 's/^/  origin\\//'
 [user]
 	name = Kevin Lundberg
 	email = klundberg@wayfair.com
@@ -61,7 +63,7 @@
 	prune = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
