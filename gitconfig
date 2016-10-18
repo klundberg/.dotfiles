@@ -25,6 +25,7 @@
 [user]
 	name = Kevin Lundberg
 	email = kevin@klundberg.com
+	signingkey = D9105666
 [color]
 	ui = true
 [branch]
