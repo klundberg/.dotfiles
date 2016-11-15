@@ -23,14 +23,15 @@
 	board = !"git train | xargs git checkout -t"
 	couple = !git board && git merge --squash
 	detrain = !git branch --list | grep deploy_ | xargs git branch -d
-	mbu = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
-	mb = !git mbu | grep -v "^hotfix-.*" | grep -v "^release-.*"
+	umb = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
+	mb = !git umb | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
 	dmb = !git mb | xargs -n 1 git branch -d
-	dmbu = !git mbu | xargs -n 1 git branch -d
-	mbru = !git branch -r --merged | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
-	mbr = !git mbru | grep -v "\\s*hotfix-" | grep -v "^\\s*release-"
+	dumb = !git umb | xargs -n 1 git branch -d
+	umbr = !git branch -r --merged | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
+	mbr = !git umbr | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
 	dmbr = !git mbr | xargs -n 1 git push -d origin
-	dmbru = !git mbru | xargs -n 1 git push -d origin
+	dumbr = !git umbr | xargs -n 1 git push -d origin
+	df = diff --word-diff
 [user]
 	name = Kevin Lundberg
 	email = klundberg@wayfair.com
@@ -47,11 +48,11 @@
 	tool = p4merge
 [mergetool]
 	keepBackup = false
-	prompt = false
 	keepTemporaries = false
+	trustExitCode = true
 [mergetool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
+	trustExitCode = false
 [diff "localizablestrings"]
 	textconv = "iconv -f utf-16 -t utf-8"
 [push]
