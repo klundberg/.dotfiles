@@ -10,6 +10,8 @@ source $HOME/.oh-my-git/prompt.sh
 
 eval "$(rbenv init -)"
 
+alias unfuckxcode='rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf ~/Library/Caches/com.apple.dt.Xcode; echo -e "\xF0\x9F\x94\xA5 BURN IT ALL\xF0\x9F\x94\xA5"'
+
 if [ "$LOCATION" == "Work" ]; then
   # wayfair
   export FASTLANE_USER='klundberg@wayfair.com'
