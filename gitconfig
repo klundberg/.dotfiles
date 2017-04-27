@@ -36,8 +36,7 @@
 	mmerge = merge -X diff-algorithm=minimal
 [user]
 	name = Kevin Lundberg
-	email = kevin@klundberg.com
-	signingkey = D9105666
+	email = klundberg@wayfair.com
 [color]
 	ui = true
 [branch]
@@ -80,6 +79,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/klundberg/.stCommitMsg
-	gpgsign = true
 [rebase]
 	autoStash = true
