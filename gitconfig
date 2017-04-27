@@ -32,6 +32,8 @@
 	dmbr = !git mbr | xargs -n 1 git push -d origin
 	dumbr = !git umbr | xargs -n 1 git push -d origin
 	df = diff --word-diff
+	pmerge = merge -X patience --
+	mmerge = merge -X diff-algorithm=minimal
 [user]
 	name = Kevin Lundberg
 	email = kevin@klundberg.com
@@ -79,3 +81,5 @@
 [commit]
 	template = /Users/klundberg/.stCommitMsg
 	gpgsign = true
+[rebase]
+	autoStash = true

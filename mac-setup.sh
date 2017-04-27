@@ -19,10 +19,12 @@ brew install curl
 brew install carthage
 brew install cloc
 brew install cmake
+brew install fish
 brew install git
 brew install gpg
 brew install imagemagick
 brew install keybase
+brew install mas
 brew install ninja
 brew install rbenv
 brew install sourcekitten
@@ -63,20 +65,30 @@ brew cask install wwdc
 brew cask install xquartz
 # optional: macdown
 
+# configure fish
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+
+# configure oh-my-fish
+curl -L https://get.oh-my.fish | fish
+rm ~/.config/omf
+ln -s ~/.dotfiles/omf ~/.config/omf
+omf theme bobthefish
+
 # install apps manually
-# BetterSnapTool
-# CCMenu
-# Deckset
 # Dropbox/Sync
-# Fabric
 # JenkinsStatusItem
 # Safari Tech Preview
-# Server.app
 # SourceTree
 # Spotify
 # TorBrowser
-# TweetBot
-# Twitter
+
+mas install BetterSnapTool
+mas install CCMenu
+mas install Deckset
+mas install Server
+mas install Tweetbot
+mas install Twitter
 
 # install atom config
 apm install sync-settings
