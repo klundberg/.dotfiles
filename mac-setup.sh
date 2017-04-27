@@ -26,6 +26,7 @@ brew install git
 brew install gpg
 brew install imagemagick
 brew install keybase
+brew install librsvg
 brew install mas
 brew install ninja
 brew install rbenv
