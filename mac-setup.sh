@@ -16,51 +16,51 @@ $DIR/update-settings.sh
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # install homebrew tools
-brew install bash-completion
-brew install curl
-brew install carthage
-brew install cloc
-brew install cmake
-brew install fish
-brew install git
-brew install gpg
-brew install imagemagick
-brew install keybase
-brew install librsvg
-brew install mas
-brew install ninja
-brew install rbenv
-brew install sourcekitten
-brew install swiftlint
-brew install the_silver_searcher
-brew install wget
-brew install xcproj
+brew install bash-completion \
+  curl \
+  carthage \
+  cloc \
+  cmake \
+  fish \
+  git \
+  gpg \
+  imagemagick \
+  keybase \
+  librsvg \
+  mas \
+  ninja \
+  rbenv \
+  sourcekitten \
+  swiftlint \
+  the_silver_searcher \
+  wget \
+  xcproj
 
 # optional: brew install mogenerator mitmproxy privoxy jenkins android-sdk tinyproxy
 
 # install casks
 brew tap caskroom/cask
 
-brew cask install atom
-brew cask install appcode
-brew cask install brave
-brew cask install caffeine
-brew cask install dash
-brew cask install disk-inventory-x
-brew cask install firefox
-brew cask install flux
-brew cask install github-desktop
-brew cask install iterm2
-brew cask install keepassx
-brew cask install p4merge
-brew cask install phpstorm
-brew cask install postman
-brew cask install quickradar
-brew cask install slack
-brew cask install sourcetree
-brew cask install textual
-brew cask install wwdc
-brew cask install xquartz
+brew cask install atom \
+  appcode \
+  brave \
+  caffeine \
+  dash \
+  disk-inventory-x \
+  firefox \
+  flux \
+  github-desktop \
+  iterm2 \
+  keepassx \
+  p4merge \
+  phpstorm \
+  postman \
+  quickradar \
+  slack \
+  sourcetree \
+  textual \
+  wwdc \
+  xquartz
 # optional:
 # brew cask install dropbox
 # brew cask install macdown
@@ -100,15 +100,16 @@ rbenv global 2.4.1
 
 # install gems
 `rbenv which gem` install \
-badge \
-bundler \
-cocoapods \
-cocoapods-dependencies \
-fastlane \
-rubocop \
-synx \
-xcode-install
-# optional: gem install danger
+  badge \
+  bundler \
+  cocoapods \
+  cocoapods-dependencies \
+  fastlane \
+  rubocop \
+  synx \
+  xcode-install
+# optional:
+# gem install danger
 
 source ~/.bash_profile
 
