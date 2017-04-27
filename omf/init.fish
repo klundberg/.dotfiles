@@ -2,7 +2,7 @@
 status --is-interactive; and source (rbenv init -|psub)
 
 # customize user paths
-set --universal fish_user_paths $fish_user_paths ~/bin
+set --global fish_user_paths ~/bin (realpath $OMF_CONFIG/../bin)
 
 # aliases
 alias ls='ls -G'
