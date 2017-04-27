@@ -3,6 +3,8 @@
 # reminder to install other things
 # 1. update github private ssh key
 
+xcode-select --install
+
 # Get running directory of script so we can call other scripts in the same dir.
 ORIGINAL_DIR=$(pwd)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -33,13 +35,11 @@ brew install the_silver_searcher
 brew install wget
 brew install xcproj
 
-# optional: mogenerator, mitmproxy, privoxy, oclint, jenkins, android-sdk, tinyproxy,
-
-# install caskroom
-brew tap caskroom/cask
-brew tap caskroom/fonts
+# optional: brew install mogenerator mitmproxy privoxy jenkins android-sdk tinyproxy
 
 # install casks
+brew tap caskroom/cask
+
 brew cask install atom
 brew cask install appcode
 brew cask install brave
@@ -48,10 +48,6 @@ brew cask install dash
 brew cask install disk-inventory-x
 brew cask install firefox
 brew cask install flux
-brew cask install font-awesome-terminal-fonts
-brew cask install font-fira-code
-brew cask install font-hack
-brew cask install font-inconsolata
 brew cask install github-desktop
 brew cask install iterm2
 brew cask install keepassx
@@ -60,28 +56,26 @@ brew cask install phpstorm
 brew cask install postman
 brew cask install quickradar
 brew cask install slack
+brew cask install sourcetree
 brew cask install textual
 brew cask install wwdc
 brew cask install xquartz
-# optional: macdown
+# optional:
+# brew cask install dropbox
+# brew cask install macdown
+# brew cask install spotify
+# brew cask install torbrowser
 
-# configure fish
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+# install custom fonts
+brew tap caskroom/fonts
 
-# configure oh-my-fish
-curl -L https://get.oh-my.fish | fish
-rm ~/.config/omf
-ln -s ~/.dotfiles/omf ~/.config/omf
-omf theme bobthefish
+brew cask install font-awesome-terminal-fonts
+brew cask install font-fira-code
+brew cask install font-hack
+brew cask install font-inconsolata
 
-# install apps manually
-# Dropbox/Sync
-# JenkinsStatusItem
-# Safari Tech Preview
-# SourceTree
-# Spotify
-# TorBrowser
+# install manually:
+# - Safari Tech Preview
 
 mas install BetterSnapTool
 mas install CCMenu
@@ -98,18 +92,30 @@ apm install sync-settings
 git clone https://github.com/arialdomartini/oh-my-git.git ~/.oh-my-git
 
 # install rbenv versions
-rbenv install 2.0.0-p648
-rbenv global 2.0.0-p648
+rbenv install 2.4.1
+rbenv global 2.4.1
 
 # install gems
-gem install \
+`rbenv which gem` install \
 badge \
+bundler \
 cocoapods \
 cocoapods-dependencies \
 fastlane \
 rubocop \
 synx \
 xcode-install
-# optional: danger
+# optional: gem install danger
 
 source ~/.bash_profile
+
+# configure fish
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+
+# configure oh-my-fish
+curl -L https://get.oh-my.fish | fish
+rm -rf ~/.config/omf
+ln -s ~/.dotfiles/omf ~/.config/omf
+omf install
+omf reload
