@@ -77,6 +77,8 @@ brew cask install font-inconsolata
 # install manually:
 # - Safari Tech Preview
 
+# install mac app store apps
+mas signin kevin@klundberg.com --dialog
 mas install BetterSnapTool
 mas install CCMenu
 mas install Deckset
