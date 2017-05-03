@@ -1,2 +1,2 @@
 #!/bin/sh
-[ $# -eq 7 ] && ~/Applications/p4merge.app/Contents/MacOS/p4merge "$2" "$5"
+[ $# -eq 7 ] && /Applications/p4merge.app/Contents/MacOS/p4merge "$2" "$5"

@@ -18,22 +18,35 @@
 	mt = mergetool
 	a = add -p
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+	df = diff --word-diff
+	pmerge = merge -X patience --
+	mmerge = merge -X diff-algorithm=minimal
+	# wayfair-specific
 	trains = !"echo 'Fetching...' && git fetch -q && echo ' DONE' && git for-each-ref --count=5 --sort=-committerdate --format='%(committerdate:relative) %09 %(refname:short)' refs/remotes/origin/deploy_$(date +%Y_%m_%d)_*"
 	train = !"git fetch -q && git for-each-ref --count=1 --sort=-committerdate --format='%(refname:short)' refs/remotes/origin/deploy_*"
 	board = !"git train | xargs git checkout -t"
 	couple = !git board && git merge --squash
 	detrain = !git branch --list | grep deploy_ | xargs git branch -d
-	umb = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
-	mb = !git umb | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
+	# merged branch operations
+	mbu = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
+	mb = !git mbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
 	dmb = !git mb | xargs -n 1 git branch -d
-	dumb = !git umb | xargs -n 1 git branch -d
-	umbr = !git branch -r --merged | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
-	mbr = !git umbr | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
+	dmbu = !git mbu | xargs -n 1 git branch -d
+	# remote merged branch operations
+	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
+	mbr = !git mbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
 	dmbr = !git mbr | xargs -n 1 git push -d origin
+	dmbru = !git mbru | xargs -n 1 git push -d origin
+	# unmerged branch operations
+	umbu = !git branch --no-merged | grep -v \"\\*\" | grep -v master | grep -v develop
+	umb = !git umbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
+	dumb = !git umb | xargs -n 1 git branch -d
+	dumbu = !git umbu | xargs -n 1 git branch -d
+	# remote unmerged branch operations
+	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
+	umbr = !git umbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
 	dumbr = !git umbr | xargs -n 1 git push -d origin
-	df = diff --word-diff
-	pmerge = merge -X patience --
-	mmerge = merge -X diff-algorithm=minimal
+	dumbru = !git umbru | xargs -n 1 git push -d origin
 [user]
 	name = Kevin Lundberg
 	email = kevin@klundberg.com
@@ -79,7 +92,6 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/klundberg/.stCommitMsg
 	gpgsign = true
 [rebase]
 	autoStash = true

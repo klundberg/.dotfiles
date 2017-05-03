@@ -61,6 +61,7 @@ brew cask install atom \
   textual \
   wwdc \
   xquartz
+brew install kylef/formulae/swiftenv
 # optional:
 # brew cask install dropbox
 # brew cask install macdown
