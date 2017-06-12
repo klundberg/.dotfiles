@@ -40,8 +40,8 @@
 	# unmerged branch operations
 	umbu = !git branch --no-merged | grep -v \"\\*\" | grep -v master | grep -v develop
 	umb = !git umbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
-	dumb = !git umb | xargs -n 1 git branch -d
-	dumbu = !git umbu | xargs -n 1 git branch -d
+	dumb = !git umb | xargs -n 1 git branch -D
+	dumbu = !git umbu | xargs -n 1 git branch -D
 	# remote unmerged branch operations
 	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
 	umbr = !git umbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
@@ -77,8 +77,9 @@
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 	required = true
 [rerere]
 	enabled = true
