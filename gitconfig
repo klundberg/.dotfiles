@@ -47,6 +47,7 @@
 	umbr = !git umbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
 	dumbr = !git umbr | xargs -n 1 git push -d origin
 	dumbru = !git umbru | xargs -n 1 git push -d origin
+	pf = push --force-with-lease
 [user]
 	name = Kevin Lundberg
 	email = klundberg@wayfair.com
@@ -87,7 +88,7 @@
 	prune = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
