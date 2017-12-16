@@ -29,12 +29,12 @@
 	detrain = !git branch --list | grep deploy_ | xargs git branch -d
 	# merged branch operations
 	mbu = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
-	mb = !git mbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
+	mb = !git mbu | grep -v "^hotfix/.*" | grep -v "^release/.*" | grep -v "^pre-release/.*"
 	dmb = !git mb | xargs -n 1 git branch -d
 	dmbu = !git mbu | xargs -n 1 git branch -d
 	# remote merged branch operations
 	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
-	mbr = !git mbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
+	mbr = !git mbru | grep -v "^\\s*hotfix/" | grep -v "^\\s*release/" | grep -v "^\\s*pre-release/"
 	dmbr = !git mbr | xargs -n 1 git push -d origin
 	dmbru = !git mbru | xargs -n 1 git push -d origin
 	# unmerged branch operations
