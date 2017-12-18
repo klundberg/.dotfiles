@@ -36,6 +36,9 @@ brew install bash-completion \
   wget \
   xcproj
 
+brew tap thoughtbot/formulae
+brew install rcm
+
 # optional: brew install mogenerator mitmproxy privoxy jenkins android-sdk tinyproxy
 
 # install casks
