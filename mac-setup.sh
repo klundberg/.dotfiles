@@ -25,7 +25,6 @@ brew install bash-completion \
   git \
   gpg \
   imagemagick \
-  keybase \
   librsvg \
   mas \
   ninja \
@@ -44,27 +43,34 @@ brew install rcm
 # install casks
 brew tap caskroom/cask
 
-brew cask install atom \
+brew cask install \
+  atom \
   appcode \
   brave \
+  brisk \
   caffeine \
   dash \
   disk-inventory-x \
   firefox \
   flux \
-  github-desktop \
+  gitup \
   iterm2 \
   keepassx \
+  keybase \
+  paw \
   p4merge \
-  phpstorm \
   postman \
-  quickradar \
+  rocket \
+  scroll-reverser \
   slack \
   sourcetree \
   textual \
+  vanilla \
   wwdc \
   xquartz
-brew install kylef/formulae/swiftenv
+
+brew cask install caskroom/versions/safari-technology-preview
+
 # optional:
 # brew cask install dropbox
 # brew cask install macdown
@@ -84,23 +90,18 @@ brew cask install font-inconsolata
 
 # install mac app store apps
 mas signin kevin@klundberg.com --dialog
-mas install BetterSnapTool
-mas install CCMenu
-mas install Deckset
-mas install Server
-mas install Tweetbot
-mas install Twitter
+mas install 417375580 # BetterSnapTool
+mas install 603117688 # CCMenu
+mas install 847496013 # Deckset
+mas install 557168941 # Tweetbot
 
 # install atom config
 apm install sync-settings
 # https://gist.github.com/klundberg/e08348e4496e9e7a7911600dd0e1afeb
 
-# install oh-my-git
-git clone https://github.com/arialdomartini/oh-my-git.git ~/.oh-my-git
-
 # install rbenv versions
-rbenv install 2.4.1
-rbenv global 2.4.1
+rbenv install 2.5.0
+rbenv global 2.5.0
 
 # install gems
 `rbenv which gem` install \
@@ -115,8 +116,6 @@ rbenv global 2.4.1
 # optional:
 # gem install danger
 
-source ~/.bash_profile
-
 # configure fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
@@ -124,6 +123,6 @@ chsh -s /usr/local/bin/fish
 # configure oh-my-fish
 curl -L https://get.oh-my.fish | fish
 rm -rf ~/.config/omf
-ln -s ~/.dotfiles/omf ~/.config/omf
+ln -s ~/.dotfiles/omf ~/.config
 omf install
 omf reload
