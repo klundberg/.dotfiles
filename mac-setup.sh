@@ -30,6 +30,7 @@ brew install bash-completion \
   ninja \
   rbenv \
   sourcekitten \
+  sourcery \
   swiftlint \
   the_silver_searcher \
   wget \
@@ -38,7 +39,7 @@ brew install bash-completion \
 brew tap thoughtbot/formulae
 brew install rcm
 
-# optional: brew install mogenerator mitmproxy privoxy jenkins android-sdk tinyproxy
+# optional: brew install mogenerator mitmproxy privoxy android-sdk tinyproxy
 
 # install casks
 brew tap caskroom/cask
@@ -51,6 +52,7 @@ brew cask install \
   caffeine \
   dash \
   disk-inventory-x \
+  docker \
   firefox \
   flux \
   gitup \
@@ -119,6 +121,11 @@ rbenv global 2.5.0
 # configure fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
+
+defaults write com.apple.finder   AppleShowAllFiles TRUE
+killall finder
+
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 
 # configure oh-my-fish
 curl -L https://get.oh-my.fish | fish
