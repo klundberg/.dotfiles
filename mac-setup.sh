@@ -67,6 +67,7 @@ brew cask install \
   slack \
   sourcetree \
   textual \
+  touche \
   vanilla \
   wwdc \
   xquartz
