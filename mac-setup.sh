@@ -88,9 +88,6 @@ brew cask install font-fira-code
 brew cask install font-hack
 brew cask install font-inconsolata
 
-# install manually:
-# - Safari Tech Preview
-
 # install mac app store apps
 mas signin kevin@klundberg.com --dialog
 mas install 417375580 # BetterSnapTool
