@@ -24,7 +24,9 @@ brew install bash-completion \
   fish \
   git \
   gpg \
+  graphviz \
   imagemagick \
+  jq \
   librsvg \
   mas \
   ninja \
@@ -36,8 +38,7 @@ brew install bash-completion \
   wget \
   xcproj
 
-brew tap thoughtbot/formulae
-brew install rcm
+brew install thoughtbot/formulae/rcm
 
 # optional: brew install mogenerator mitmproxy privoxy android-sdk tinyproxy
 
@@ -120,7 +121,7 @@ rbenv global 2.5.0
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 
-defaults write com.apple.finder   AppleShowAllFiles TRUE
+defaults write com.apple.finder AppleShowAllFiles TRUE
 killall finder
 
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
