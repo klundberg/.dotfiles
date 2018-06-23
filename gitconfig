@@ -29,28 +29,28 @@
 	detrain = !git branch --list | grep deploy_ | xargs git branch -d
 	# merged branch operations
 	mbu = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
-	mb = !git mbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
+	mb = !git mbu | grep -v "^hotfix/.*" | grep -v "^release/.*" | grep -v "^pre-release/.*"
 	dmb = !git mb | xargs -n 1 git branch -d
 	dmbu = !git mbu | xargs -n 1 git branch -d
 	# remote merged branch operations
 	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
-	mbr = !git mbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
+	mbr = !git mbru | grep -v "^\\s*hotfix/" | grep -v "^\\s*release/" | grep -v "^\\s*pre-release/"
 	dmbr = !git mbr | xargs -n 1 git push -d origin
 	dmbru = !git mbru | xargs -n 1 git push -d origin
 	# unmerged branch operations
 	umbu = !git branch --no-merged | grep -v \"\\*\" | grep -v master | grep -v develop
 	umb = !git umbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
-	dumb = !git umb | xargs -n 1 git branch -d
-	dumbu = !git umbu | xargs -n 1 git branch -d
+	dumb = !git umb | xargs -n 1 git branch -D
+	dumbu = !git umbu | xargs -n 1 git branch -D
 	# remote unmerged branch operations
 	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
 	umbr = !git umbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
 	dumbr = !git umbr | xargs -n 1 git push -d origin
 	dumbru = !git umbru | xargs -n 1 git push -d origin
+	pf = push --force-with-lease
 [user]
 	name = Kevin Lundberg
-	email = kevin@klundberg.com
-	signingkey = D9105666
+	email = klundberg@wayfair.com
 [color]
 	ui = true
 [branch]
@@ -78,20 +78,21 @@
 [credential]
 	helper = osxkeychain
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 	required = true
 [rerere]
 	enabled = true
 [fetch]
 	prune = true
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = true
 [commit]
-	gpgsign = true
+	template = /Users/klundberg/.stCommitMsg
 [rebase]
 	autoStash = true

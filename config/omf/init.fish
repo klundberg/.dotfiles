@@ -5,7 +5,7 @@ status --is-interactive; and source (rbenv init -|psub)
 #status --is-interactive; and . (swiftenv init -|psub)
 
 # customize user paths
-set --global fish_user_paths ~/bin (realpath $OMF_CONFIG/../bin)
+set --global fish_user_paths ~/bin (realpath $OMF_CONFIG/../../bin)
 
 # aliases
 alias ls='ls -G'
