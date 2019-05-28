@@ -48,6 +48,8 @@
 	dumbr = !git umbr | xargs -n 1 git push -d origin
 	dumbru = !git umbru | xargs -n 1 git push -d origin
 	pf = push --force-with-lease
+	boom = "!git us; git co -- .; git clean -df"
+	cia = commit -a --amend --no-edit
 [user]
 	name = Kevin Lundberg
 	email = klundberg@wayfair.com
@@ -57,6 +59,9 @@
 	autosetuprebase = always
 [core]
 	excludesfile = /Users/klundberg/.dotfiles/gitignore_global
+[pager]
+       diff = diff-so-fancy | less --tabs=1,5 -RFX
+       show = diff-so-fancy | less --tabs=1,5 -RFX
 [difftool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
 [merge]
@@ -77,11 +82,6 @@
 	rebase = true
 [credential]
 	helper = osxkeychain
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [rerere]
 	enabled = true
 [fetch]
@@ -96,3 +96,8 @@
 	template = /Users/klundberg/.stCommitMsg
 [rebase]
 	autoStash = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,5 +1,7 @@
 package brew
 package bundler
 package osx
+package rbenv
+package xcode
 theme bobthefish
 theme default
