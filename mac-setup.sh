@@ -21,6 +21,7 @@ ln -s ~/.dotfiles/Brewfile ~/.Brewfile
 
 # install asdf-managed tools and languages
 asdf plugin-add nodejs
+asdf plugin-add python
 asdf plugin-add ruby
 asdf plugin-add rust
 
@@ -29,6 +30,7 @@ asdf install
 
 # install gems
 gem install bundler xcode-install
+asdf reshim ruby # adds gems back to path
 
 # configure fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
@@ -42,6 +44,7 @@ defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 # configure oh-my-fish
 curl -L https://get.oh-my.fish | fish
 rm -rf ~/.config/omf
-ln -s ~/.dotfiles/config ~/.config
+ln -s ~/.dotfiles/config/fish ~/.config/fish
+ln -s ~/.dotfiles/config/omf ~/.config/omf
 omf install
 omf reload

@@ -1,6 +1,5 @@
 package brew
 package osx
-package rbenv
 package vcs
 package xcode
 theme bobthefish
