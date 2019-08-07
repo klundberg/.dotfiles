@@ -1,7 +1,8 @@
 package brew
-package bundler
 package osx
 package rbenv
+package vcs
 package xcode
 theme bobthefish
 theme default
+theme emoji-powerline

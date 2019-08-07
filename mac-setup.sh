@@ -17,29 +17,18 @@ $DIR/update-settings.sh
 
 # link brewfile and install via brew-bundle
 ln -s ~/.dotfiles/Brewfile ~/.Brewfile
-brew bundle --global
+/usr/local/bin/brew bundle --global
 
-# install atom config
-apm install sync-settings
-# https://gist.github.com/klundberg/e08348e4496e9e7a7911600dd0e1afeb
+# install asdf-managed tools and languages
+asdf plugin-add nodejs
+asdf plugin-add ruby
+asdf plugin-add rust
 
-# install rbenv versions
-rbenv install 2.5.0
-rbenv global 2.5.0
+ln -s ~/.dotfiles/tool-versions ~/.tool-versions
+asdf install
 
 # install gems
-`rbenv which gem` install \
-  badge \
-  bundler \
-  cocoapods \
-  cocoapods-dependencies \
-  fastlane \
-  rubocop \
-  rsense \
-  synx \
-  xcode-install
-# optional:
-# gem install danger
+gem install bundler xcode-install
 
 # configure fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
