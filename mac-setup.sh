@@ -12,7 +12,7 @@ ORIGINAL_DIR=$(pwd)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$ORIGINAL_DIR"
 
-"$DIR"/update-settings.sh
+"$DIR"/update-symlinks.sh
 
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -21,31 +21,32 @@ cd "$ORIGINAL_DIR"
 /usr/local/bin/brew bundle --global
 
 # install asdf-managed tools and languages
-/usr/local/opt/asdf/bin/asdf plugin-add nodejs
-/usr/local/opt/asdf/bin/asdf plugin-add python
-/usr/local/opt/asdf/bin/asdf plugin-add ruby
-/usr/local/opt/asdf/bin/asdf plugin-add rust
-/usr/local/opt/asdf/bin/asdf plugin-add swiftlint https://github.com/klundberg/asdf-swiftlint.git
+asdf() {
+    /usr/local/opt/asdf/bin/asdf "$@"
+}
+asdf plugin-add nodejs
+asdf plugin-add python
+asdf plugin-add ruby
+asdf plugin-add rust
+asdf plugin-add swiftlint https://github.com/klundberg/asdf-swiftlint.git
 
-/usr/local/opt/asdf/bin/asdf install
+asdf install
 
-# install gems
 $(asdf which gem) install bundler xcode-install
-/usr/local/opt/asdf/bin/asdf reshim ruby # adds gems back to path
+/asdf reshim ruby # adds gems back to path
 
-# configure fish
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
-
+# set some defaults settings
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 defaults write com.apple.finder AppleShowAllFiles TRUE
 killall finder
 
-defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+# configure fish
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish # after this, we will be running in fish
 
 # configure oh-my-fish
-/usr/local/bin/curl -L https://get.oh-my.fish | fish
-rm -rf ~/.config/omf
-ln -s ~/.dotfiles/config/fish ~/.config/fish
-ln -s ~/.dotfiles/config/omf ~/.config/omf
+/usr/bin/curl -sSL https://get.oh-my.fish > .temp-install-omf
+fish .temp-install-omf --yes
+rm .temp-install-omf
 omf install
 omf reload
