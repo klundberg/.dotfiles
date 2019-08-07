@@ -18,7 +18,6 @@ cd "$ORIGINAL_DIR"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 # link brewfile and install via brew-bundle
-ln -s ~/.dotfiles/Brewfile ~/.Brewfile
 /usr/local/bin/brew bundle --global
 
 # install asdf-managed tools and languages
@@ -28,7 +27,6 @@ ln -s ~/.dotfiles/Brewfile ~/.Brewfile
 /usr/local/opt/asdf/bin/asdf plugin-add rust
 /usr/local/opt/asdf/bin/asdf plugin-add swiftlint https://github.com/klundberg/asdf-swiftlint.git
 
-ln -s ~/.dotfiles/tool-versions ~/.tool-versions
 /usr/local/opt/asdf/bin/asdf install
 
 # install gems
