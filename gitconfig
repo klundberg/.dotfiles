@@ -50,6 +50,9 @@
 	pf = push --force-with-lease
 	boom = "!git us; git co -- .; git clean -df"
 	cia = commit -a --amend --no-edit
+	rs = restore
+	sw = switch
+	oops = "!git commit -a --amend --no-edit; and git push --force-with-lease"
 [user]
 	name = Kevin Lundberg
 	email = klundberg@wayfair.com
