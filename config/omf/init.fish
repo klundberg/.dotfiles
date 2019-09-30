@@ -10,3 +10,7 @@ alias unfuckxcode='rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf ~/Librar
 # setup asdf
 set --global ASDF_DIR (brew --prefix asdf)
 source "$ASDF_DIR/asdf.fish"
+
+if [ -e ~/.dotfiles/local/init.fish ]
+    source ~/.dotfiles/local/init.fish
+end

@@ -53,6 +53,7 @@
 	rs = restore
 	sw = switch
 	oops = "!git commit -a --amend --no-edit; and git push --force-with-lease"
+	patch = !git --no-pager diff --no-color
 [user]
 	name = Kevin Lundberg
 	email = klundberg@wayfair.com
