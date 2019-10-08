@@ -7,10 +7,18 @@ tap "homebrew/core"
 tap "peripheryapp/periphery"
 tap "thoughtbot/formulae"
 tap "vapor/tap"
+brew "sqlite"
+brew "aircrack-ng"
+brew "autoconf"
+brew "libtool"
+brew "libyaml"
 brew "asdf"
 brew "bash-completion"
 brew "bat"
 brew "boost"
+brew "bsdmake"
+brew "fontconfig"
+brew "gettext"
 brew "carthage"
 brew "cloc"
 brew "cmake"
@@ -18,21 +26,26 @@ brew "curl"
 brew "diff-so-fancy"
 brew "fd"
 brew "fish"
+brew "gd"
 brew "git"
 brew "git-lfs"
-brew "gnupg"
 brew "gource"
 brew "graphviz"
+brew "hub"
 brew "hyperfine"
 brew "imagemagick"
+brew "oniguruma"
 brew "jq"
 brew "librsvg"
 brew "mas"
 brew "mint"
+brew "mitmproxy"
 brew "ncdu"
 brew "ninja"
 brew "parallel"
+brew "pkg-config"
 brew "prettyping"
+brew "proctools"
 brew "shellcheck"
 brew "sourcekitten"
 brew "sourcery"
@@ -44,16 +57,15 @@ brew "xcodegen"
 brew "browsh-org/browsh/browsh"
 brew "thoughtbot/formulae/rcm"
 cask "boostnote"
-cask "brave"
+cask "brave-browser"
 cask "brisk"
-cask "caffeine"
+cask "calibre"
+cask "daisydisk"
 cask "dash"
 cask "discord"
-cask "disk-inventory-x"
 cask "docker"
 cask "fastlane"
 cask "firefox"
-cask "flux"
 cask "font-awesome-terminal-fonts"
 cask "font-fira-code"
 cask "font-hack"
@@ -62,12 +74,19 @@ cask "font-input"
 cask "font-sans-forgetica"
 cask "fork"
 cask "gitup"
+cask "gog-galaxy"
+cask "gpg-suite"
 cask "insomnia"
+cask "itch"
 cask "iterm2"
 cask "java"
 cask "keepassx"
+cask "keybase"
+cask "little-snitch"
 cask "macdown"
+cask "micro-snitch"
 cask "microblog"
+cask "openemu"
 cask "p4v"
 cask "paw"
 cask "postman"
@@ -78,29 +97,38 @@ cask "scroll-reverser"
 cask "spotify"
 cask "station"
 cask "steam"
+cask "sublime-merge"
 cask "textual"
 cask "tor-browser"
-cask "touche"
 cask "transmission"
+cask "twitch"
 cask "vanilla"
 cask "visual-studio-code"
 cask "whalebird"
 cask "windows95"
 cask "wwdc"
 cask "peripheryapp/periphery/periphery"
+mas "1Password 7", id: 1333542190
+mas "Battery Health", id: 490192174
 mas "BetterSnapTool", id: 417375580
-mas "DaisyDisk", id: 411643860
+mas "CCMenu", id: 603117688
+mas "Copia", id: 1162224626
 mas "Deckset", id: 847496013
 mas "DevCleaner", id: 1388020431
+mas "DodoPeak", id: 1469105774
 mas "GarageBand", id: 682658836
+mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "MarsEdit", id: 1198319098
 mas "Microsoft Remote Desktop", id: 1295203466
+mas "Mini Motorways", id: 1456188526
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Paste JSON as Code • quicktype", id: 1330801220
 mas "Pocket", id: 568494494
 mas "ToothFairy", id: 1191449274
 mas "Trello", id: 1278508951
-mas "Tweetbot", id: 557168941
 mas "Tweetbot", id: 1384080005
+mas "Tweetbot", id: 557168941
+mas "WHAT THE GOLF", id: 1474771319
