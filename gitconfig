@@ -56,7 +56,7 @@
 	patch = !git --no-pager diff --no-color
 [user]
 	name = Kevin Lundberg
-	email = klundberg@wayfair.com
+	email = kevin@klundberg.com
 [color]
 	ui = true
 [branch]
