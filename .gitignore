@@ -1,3 +1,4 @@
 .temp*
 local*
 .DS_Store
+config/omf/weather/api-key
