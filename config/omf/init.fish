@@ -1,5 +1,5 @@
 # customize user paths
-set --global fish_user_paths ~/bin (realpath $OMF_CONFIG/../../bin) ~/.fastlane/bin
+set --global fish_user_paths ~/bin (realpath $OMF_CONFIG/../../bin) ~/.fastlane/bin /usr/local/sbin
 
 set --global theme_display_ruby no
 
