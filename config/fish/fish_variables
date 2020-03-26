@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export FASTLANE_USER:klundberg\x40wayfair\x2ecom
-SETUVAR --export XCODE_INSTALL_USER:klundberg\x40wayfair\x2ecom
+SETUVAR --export FASTLANE_USER:kevin\x40klundberg\x2ecom
+SETUVAR --export XCODE_INSTALL_USER:kevin\x40klundberg\x2ecom
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d

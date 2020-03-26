@@ -1,21 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 set -euo pipefail
-
-# reminder to install other things
-# 1. update github private ssh key
-
-xcode-select --install
 
 # Get running directory of script so we can call other scripts in the same dir.
 ORIGINAL_DIR=$(pwd)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$ORIGINAL_DIR"
 
-"$DIR"/update-symlinks.sh
+"$DIR"/setup/create-ssh-key.sh
+"$DIR"/setup/update-symlinks.sh
 
 # install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # link brewfile and install via brew-bundle
 /usr/local/bin/brew bundle --global
@@ -33,7 +29,7 @@ asdf plugin-add swiftlint https://github.com/klundberg/asdf-swiftlint.git
 asdf install
 
 $(asdf which gem) install bundler xcode-install
-/asdf reshim ruby # adds gems back to path
+asdf reshim ruby # adds gems back to path
 
 # set some defaults settings
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
@@ -50,3 +46,6 @@ fish .temp-install-omf --yes
 rm .temp-install-omf
 omf install
 omf reload
+
+cd "$ORIGINAL_DIR"
+echo "You are all set!"
