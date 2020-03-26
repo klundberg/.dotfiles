@@ -6,7 +6,7 @@ set -euo pipefail
 cd ~
 
 # install command line tools
-xcode-select --install
+xcode-select --install || true
 
 # clone dot files repo
 git clone https://github.com/klundberg/.dotfiles.git 
