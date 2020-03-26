@@ -120,7 +120,6 @@ mas "1Blocker", id: 1107421413
 mas "Battery Health 2", id: 1120214373
 mas "BetterSnapTool", id: 417375580
 mas "CCMenu", id: 603117688
-mas "Copia", id: 1162224626
 mas "Crossy Road Castle", id: 1489275350
 mas "Deckset", id: 847496013
 mas "DevCleaner", id: 1388020431
