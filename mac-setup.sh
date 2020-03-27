@@ -45,7 +45,6 @@ xcversion install 11.4
 # set some defaults settings
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 defaults write com.apple.finder AppleShowAllFiles TRUE
-killall finder
 
 # configure fish
 echo /usr/local/bin/fish | sudo tee -a /etc/shells

@@ -10,5 +10,5 @@ ln -sFf ~/.dotfiles/tool-versions ~/.tool-versions
 ln -sFf ~/.dotfiles/bash_profile ~/.bash_profile
 ln -sFf ~/.dotfiles/Brewfile ~/.Brewfile
 # directories
-ln -sFf ~/.dotfiles/config/fish ~/.config
-ln -sFf ~/.dotfiles/config/omf ~/.config
+ln -sFfh ~/.dotfiles/config/fish ~/.config/fish
+ln -sFfh ~/.dotfiles/config/omf ~/.config/omf
