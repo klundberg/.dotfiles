@@ -1,4 +1,5 @@
 # customize user paths
+set --global SSH_AUTH_SOCK (realpath ~/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh)
 set --global fish_user_paths ~/bin (realpath $OMF_CONFIG/../../bin) ~/.fastlane/bin /usr/local/sbin
 
 set --global theme_display_ruby no
