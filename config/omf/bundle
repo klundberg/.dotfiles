@@ -1,10 +1,6 @@
 package brew
 package config
-package osx
 package spark
-package vcs
-package weather
 package xcode
 theme bobthefish
 theme default
-theme emoji-powerline

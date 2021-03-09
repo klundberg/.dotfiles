@@ -21,30 +21,24 @@
 	df = diff --word-diff
 	pmerge = merge -X patience --
 	mmerge = merge -X diff-algorithm=minimal
-	# wayfair-specific
-	trains = !"echo 'Fetching...' && git fetch -q && echo ' DONE' && git for-each-ref --count=5 --sort=-committerdate --format='%(committerdate:relative) %09 %(refname:short)' refs/remotes/origin/deploy_$(date +%Y_%m_%d)_*"
-	train = !"git fetch -q && git for-each-ref --count=1 --sort=-committerdate --format='%(refname:short)' refs/remotes/origin/deploy_*"
-	board = !"git train | xargs git checkout -t"
-	couple = !git board && git merge --squash
-	detrain = !git branch --list | grep deploy_ | xargs git branch -d
 	# merged branch operations
-	mbu = !git branch --merged | grep -v \"\\*\" | grep -v master | grep -v develop
-	mb = !git mbu | grep -v "^hotfix/.*" | grep -v "^release/.*" | grep -v "^pre-release/.*"
+	mbu = !git branch --merged | grep -v \"\\*\" | grep -E -v \"^\\s*(master|main|develop)$\"
+	mb = !git mbu | grep -v "hotfix[/-].*" | grep -v "release[/\\-].*"
 	dmb = !git mb | xargs -n 1 git branch -d
 	dmbu = !git mbu | xargs -n 1 git branch -d
 	# remote merged branch operations
-	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
-	mbr = !git mbru | grep -v "^\\s*hotfix/" | grep -v "^\\s*release/" | grep -v "^\\s*pre-release/"
+	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -E -v \"^\\s*(master|main|develop)$\" | grep -v "HEAD"
+	mbr = !git mbru | grep -v "^\\s*hotfix[/-]" | grep -v "^\\s*release[/-]"
 	dmbr = !git mbr | xargs -n 1 git push -d origin
 	dmbru = !git mbru | xargs -n 1 git push -d origin
 	# unmerged branch operations
-	umbu = !git branch --no-merged | grep -v \"\\*\" | grep -v master | grep -v develop
-	umb = !git umbu | grep -v "^hotfix-.*" | grep -v "^release-.*" | grep -v "^pre-release-.*"
+	umbu = !git branch --no-merged | grep -v \"\\*\" | grep -E -v \"^\\s*(master|main|develop)$\"
+	umb = !git umbu | grep -v "hotfix[/-].*" | grep -v "release[/-].*"
 	dumb = !git umb | xargs -n 1 git branch -D
 	dumbu = !git umbu | xargs -n 1 git branch -D
 	# remote unmerged branch operations
-	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -v master | grep -v "^develop$"
-	umbr = !git umbru | grep -v "^\\s*hotfix-" | grep -v "^\\s*release-" | grep -v "^\\s*pre-release-"
+	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -E -v \"^\\s*(master|main|develop)$\"
+	umbr = !git umbru | grep -v "^\\s*hotfix[-/]" | grep -v "^\\s*release[/-]"
 	dumbr = !git umbr | xargs -n 1 git push -d origin
 	dumbru = !git umbru | xargs -n 1 git push -d origin
 	pf = push --force-with-lease
@@ -54,6 +48,11 @@
 	sw = switch
 	oops = "!git commit -a --amend --no-edit; and git push --force-with-lease"
 	patch = !git --no-pager diff --no-color
+	sm = submodule
+	smu = submodule update
+	smfe = submodule foreach
+	commitcount = !git rev-list HEAD | wc -l
+	cc = commitcount
 [user]
 	name = Kevin Lundberg
 	email = klundberg@starry.com
@@ -107,3 +106,5 @@
 	required = true
 [pack]
 	useSparse = true
+[interactive]
+	diffFilter = diff-so-fancy --patch
