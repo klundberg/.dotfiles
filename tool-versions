@@ -1,5 +1,5 @@
 nodejs 12.16.1
-python 3.8.5
-ruby 2.7.1
+python 3.9.2
+ruby 3.0.1
 rust stable
-swiftlint 0.40.2
+swiftlint 0.43.1

@@ -32,12 +32,11 @@ asdf plugin-add swiftlint
 
 asdf install
 
-$(asdf which gem) install bundler xcode-install
-asdf reshim ruby # adds gems back to path
+brew install xcodes
 
-xcversion update
-xcversion list
-xcversion install 11.4
+xcodes update
+xcodes list
+xcodes install --latest
 
 # install remaining things via brew-bundle
 /usr/local/bin/brew bundle --global

@@ -7,12 +7,14 @@ tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
-tap "nektos/tap"
+tap "kiliankoe/formulae"
+tap "mono0926/license-plist"
 tap "peripheryapp/periphery"
 tap "robotsandpencils/made"
+tap "swiftdocorg/formulae"
 tap "thoughtbot/formulae"
 tap "vapor/tap"
-brew "sqlite"
+brew "act"
 brew "aircrack-ng"
 brew "autoconf"
 brew "automake"
@@ -33,6 +35,8 @@ brew "curl"
 brew "dbus"
 brew "dbus-glib"
 brew "diff-so-fancy"
+brew "direnv"
+brew "exa"
 brew "fd"
 brew "fish"
 brew "gd"
@@ -41,8 +45,11 @@ brew "git"
 brew "git-lfs"
 brew "git-trim"
 brew "gource"
+brew "gradle"
 brew "librsvg"
 brew "graphviz"
+brew "gti"
+brew "htop"
 brew "httpie"
 brew "hub"
 brew "hugo"
@@ -50,6 +57,7 @@ brew "hyperfine"
 brew "imagemagick"
 brew "oniguruma"
 brew "jq"
+brew "less"
 brew "mas"
 brew "ninja"
 brew "meson"
@@ -64,6 +72,7 @@ brew "shellcheck"
 brew "sourcekitten"
 brew "sourcery"
 brew "swift-protobuf"
+brew "swiftformat"
 brew "swiftgen"
 brew "swiftlint"
 brew "telnet"
@@ -71,32 +80,39 @@ brew "thefuck"
 brew "tldr"
 brew "topgrade"
 brew "wget"
+brew "xcbeautify"
 brew "xcodegen"
 brew "browsh-org/browsh/browsh"
 brew "getsentry/tools/sentry-cli"
-brew "nektos/tap/act"
+brew "kiliankoe/formulae/swift-outdated"
+brew "mono0926/license-plist/license-plist"
 brew "robotsandpencils/made/xcodes"
+brew "swiftdocorg/formulae/swift-doc", link: false
 brew "thoughtbot/formulae/rcm"
-cask "1password"
+cask "1password-beta"
+cask "1password-cli"
+cask "8bitdo-ultimate-software"
 cask "adoptopenjdk8"
-cask "alfred"
-cask "android-studio"
-cask "blue-jeans"
+cask "android-studio", args: { appdir: "/Volumes/External/Applications" }
+cask "bartender"
 cask "boostnote"
 cask "brave-browser"
-cask "calibre"
+cask "charles"
 cask "coolterm"
 cask "cyberduck"
 cask "daisydisk"
 cask "dash"
+cask "devtoys"
 cask "discord"
-cask "docker"
 cask "dropbox"
-cask "fastlane"
 cask "firefox"
 cask "font-awesome-terminal-fonts"
+cask "font-cascadia-code"
+cask "font-cascadia-code-pl"
 cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "font-hack"
+cask "font-hack-nerd-font"
 cask "font-inconsolata"
 cask "font-input"
 cask "font-sans-forgetica"
@@ -105,12 +121,11 @@ cask "gimp"
 cask "github"
 cask "gitup"
 cask "gog-galaxy"
-cask "gpg-suite"
 cask "gzdoom"
 cask "inkscape"
 cask "itch"
 cask "iterm2"
-cask "keepassx"
+cask "kaleidoscope"
 cask "keybase"
 cask "libreoffice"
 cask "little-snitch"
@@ -121,52 +136,54 @@ cask "microsoft-edge"
 cask "minecraft"
 cask "mockoon"
 cask "monodraw"
+cask "netnewswire"
 cask "openemu"
 cask "p4v"
 cask "paw"
 cask "periphery"
 cask "postman"
 cask "powershell"
-cask "racket"
+cask "provisionql"
 cask "retroarch"
 cask "rocket"
+cask "safari-technology-preview"
 cask "scroll-reverser"
+cask "secretive"
 cask "sf-symbols"
 cask "sketch"
 cask "slack"
 cask "sony-ps4-remote-play"
 cask "spotify"
+cask "stats"
 cask "steam"
 cask "sublime-merge"
+cask "telegram"
 cask "textual"
 cask "tor-browser"
 cask "trailer"
 cask "transmission"
 cask "twitch"
-cask "usb-overdrive"
 cask "vanilla"
 cask "visual-studio-code"
 cask "vlc"
-cask "whalebird"
 cask "wwdc"
 cask "xcodes"
-mas "1Blocker", id: 1107421413
-mas "A Monster's Expedition", id: 1449606823
+mas "1Blocker", id: 1365531024
 mas "Battery Health 2", id: 1120214373
 mas "BetterSnapTool", id: 417375580
+mas "Bitwarden", id: 1352778147
 mas "Boop", id: 1518425043
+mas "Buildwatch", id: 1523347474
 mas "Cat Quest II", id: 1466977536
 mas "CCMenu", id: 603117688
-mas "Crossy Road Castle", id: 1489275350
 mas "Deckset", id: 847496013
 mas "Deliveries", id: 290986013
+mas "Dependencies", id: 1538972026
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
+mas "Display Menu", id: 549083868
 mas "GIPHY CAPTURE", id: 668208984
-mas "GoT: Tale of Crows", id: 1483071787
 mas "Jira", id: 1475897096
-mas "Keynote", id: 409183694
-mas "Manifold Garden", id: 1468951814
 mas "MarsEdit", id: 1198319098
 mas "Meeter", id: 1510445899
 mas "Microsoft Remote Desktop", id: 1295203466
@@ -178,12 +195,13 @@ mas "Playgrounds", id: 1496833156
 mas "Pocket", id: 568494494
 mas "Reeder", id: 1449412482
 mas "Save to Pocket", id: 1477385213
-mas "Sayonara Wild Hearts", id: 1461823255
-mas "Spidersaurs", id: 1474018511
+mas "SourceryPro", id: 1561780836
+mas "Tailscale", id: 1475387142
+mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "ToothFairy", id: 1191449274
+mas "Transporter", id: 1450874784
 mas "Trello", id: 1278508951
 mas "Tweetbot", id: 1384080005
 mas "Twitter", id: 1482454543
-mas "WCF", id: 1466835143
-mas "Yoga Studio", id: 567767430
+mas "WireGuard", id: 1451685025

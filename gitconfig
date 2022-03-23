@@ -12,7 +12,7 @@
 	cpa = cherry-pick --abort
 	cpq = cherry-pick --quit
 	unstage = reset @
-	us = !git unstage
+	us = unstage
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	mt = mergetool
@@ -21,38 +21,38 @@
 	df = diff --word-diff
 	pmerge = merge -X patience --
 	mmerge = merge -X diff-algorithm=minimal
-	# merged branch operations
-	mbu = !git branch --merged | grep -v \"\\*\" | grep -E -v \"^\\s*(master|main|develop)$\"
-	mb = !git mbu | grep -v "hotfix[/-].*" | grep -v "release[/\\-].*"
-	dmb = !git mb | xargs -n 1 git branch -d
-	dmbu = !git mbu | xargs -n 1 git branch -d
-	# remote merged branch operations
-	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -E -v \"^\\s*(master|main|develop)$\" | grep -v "HEAD"
-	mbr = !git mbru | grep -v "^\\s*hotfix[/-]" | grep -v "^\\s*release[/-]"
-	dmbr = !git mbr | xargs -n 1 git push -d origin
-	dmbru = !git mbru | xargs -n 1 git push -d origin
-	# unmerged branch operations
-	umbu = !git branch --no-merged | grep -v \"\\*\" | grep -E -v \"^\\s*(master|main|develop)$\"
-	umb = !git umbu | grep -v "hotfix[/-].*" | grep -v "release[/-].*"
-	dumb = !git umb | xargs -n 1 git branch -D
-	dumbu = !git umbu | xargs -n 1 git branch -D
-	# remote unmerged branch operations
-	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v "\\*" | grep -E -v \"^\\s*(master|main|develop)$\"
-	umbr = !git umbru | grep -v "^\\s*hotfix[-/]" | grep -v "^\\s*release[/-]"
-	dumbr = !git umbr | xargs -n 1 git push -d origin
-	dumbru = !git umbru | xargs -n 1 git push -d origin
 	pf = push --force-with-lease
-	boom = "!git us; git co -- .; git clean -df"
+	boom = "!git unstage; git checkout -- .; git clean -df"
 	cia = commit -a --amend --no-edit
 	rs = restore
 	sw = switch
-	oops = "!git commit -a --amend --no-edit; and git push --force-with-lease"
+	oops = "!git commit -a --amend --no-edit; git push --force-with-lease"
 	patch = !git --no-pager diff --no-color
 	sm = submodule
 	smu = submodule update
 	smfe = submodule foreach
 	commitcount = !git rev-list HEAD | wc -l
 	cc = commitcount
+	# merged branch operations
+	mbu = !git branch --merged | grep -v \"[\\*\\+]\" | grep -E -v \"^\\s*(master|main|develop)$\"
+	mb = !git mbu | grep -v "hotfix[/-].*" | grep -v "release[/\\-].*"
+	dmb = !git mb | xargs -n 1 git branch -d
+	dmbu = !git mbu | xargs -n 1 git branch -d
+	# remote merged branch operations
+	mbru = !git branch -r --merged | grep origin | sed 's/  origin\\///' | grep -v \"[\\*\\+]\"  | grep -E -v \"^\\s*(master|main|develop)$\" | grep -v "HEAD"
+	mbr = !git mbru | grep -v "^\\s*hotfix[/-]" | grep -v "^\\s*release[/-]"
+	dmbr = !git mbr | xargs -n 1 git push -d origin
+	dmbru = !git mbru | xargs -n 1 git push -d origin
+	# unmerged branch operations
+	umbu = !git branch --no-merged | grep -v \"[\\*\\+]\"  | grep -E -v \"^\\s*(master|main|develop)$\"
+	umb = !git umbu | grep -v "hotfix[/-].*" | grep -v "release[/-].*"
+	dumb = !git umb | xargs -n 1 git branch -D
+	dumbu = !git umbu | xargs -n 1 git branch -D
+	# remote unmerged branch operations
+	umbru = !git branch -r --no-merged | grep origin | sed 's/  origin\\///' | grep -v \"[\\*\\+]\"  | grep -E -v \"^\\s*(master|main|develop)$\"
+	umbr = !git umbru | grep -v "^\\s*hotfix[-/]" | grep -v "^\\s*release[/-]"
+	dumbr = !git umbr | xargs -n 1 git push -d origin
+	dumbru = !git umbru | xargs -n 1 git push -d origin
 [user]
 	name = Kevin Lundberg
 	email = klundberg@starry.com
@@ -77,6 +77,9 @@
 [mergetool "p4merge"]
 	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 	trustExitCode = false
+[mergetool "kaleidoscope"]
+	trustExitCode = true
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\"
 [diff "localizablestrings"]
 	textconv = "iconv -f utf-16 -t utf-8"
 [push]
@@ -89,12 +92,6 @@
 	enabled = true
 [fetch]
 	prune = true
-[difftool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-	trustExitCode = true
 [commit]
 	template = /Users/klundberg/.stCommitMsg
 [rebase]
@@ -108,3 +105,5 @@
 	useSparse = true
 [interactive]
 	diffFilter = diff-so-fancy --patch
+[init]
+	defaultBranch = main
