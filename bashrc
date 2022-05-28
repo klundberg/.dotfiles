@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/bashrc.pre.bash"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
@@ -11,3 +13,6 @@ alias unfuckxcode='rm -rf ~/Library/Developer/Xcode/DerivedData; rm -rf ~/Librar
 
 export FASTLANE_USER=klundberg@wayfair.com
 export XCODE_INSTALL_USER=klundberg@wayfair.com
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/bashrc.post.bash"
