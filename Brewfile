@@ -16,6 +16,7 @@ tap "thoughtbot/formulae"
 tap "vapor/tap"
 brew "act"
 brew "aircrack-ng"
+brew "aria2"
 brew "autoconf"
 brew "automake"
 brew "libtool"
@@ -71,6 +72,7 @@ brew "proctools"
 brew "shellcheck"
 brew "sourcekitten"
 brew "sourcery"
+brew "swift-format"
 brew "swift-protobuf"
 brew "swiftformat"
 brew "swiftgen"
@@ -105,6 +107,7 @@ cask "dash"
 cask "devtoys"
 cask "discord"
 cask "dropbox"
+cask "fig"
 cask "firefox"
 cask "font-awesome-terminal-fonts"
 cask "font-cascadia-code"
@@ -157,6 +160,7 @@ cask "spotify"
 cask "stats"
 cask "steam"
 cask "sublime-merge"
+cask "teamviewer"
 cask "telegram"
 cask "textual"
 cask "tor-browser"
@@ -166,9 +170,11 @@ cask "twitch"
 cask "vanilla"
 cask "visual-studio-code"
 cask "vlc"
+cask "whalebird"
 cask "wwdc"
 cask "xcodes"
 mas "1Blocker", id: 1365531024
+mas "Amphetamine", id: 937984704
 mas "Battery Health 2", id: 1120214373
 mas "BetterSnapTool", id: 417375580
 mas "Bitwarden", id: 1352778147
@@ -182,6 +188,7 @@ mas "Dependencies", id: 1538972026
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Display Menu", id: 549083868
+mas "DuckDuckGo Privacy Essentials", id: 1482920575
 mas "GIPHY CAPTURE", id: 668208984
 mas "Jira", id: 1475897096
 mas "MarsEdit", id: 1198319098
