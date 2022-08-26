@@ -16,6 +16,7 @@ tap "thoughtbot/formulae"
 tap "vapor/tap"
 brew "act"
 brew "aircrack-ng"
+brew "gettext"
 brew "aria2"
 brew "autoconf"
 brew "automake"
@@ -27,7 +28,6 @@ brew "bat"
 brew "boost"
 brew "bsdmake"
 brew "fontconfig"
-brew "gettext"
 brew "pkg-config"
 brew "carthage"
 brew "cloc"
@@ -80,6 +80,7 @@ brew "swiftlint"
 brew "telnet"
 brew "thefuck"
 brew "tldr"
+brew "tokei"
 brew "topgrade"
 brew "wget"
 brew "xcbeautify"
@@ -100,14 +101,11 @@ cask "bartender"
 cask "boostnote"
 cask "brave-browser"
 cask "charles"
-cask "coolterm"
-cask "cyberduck"
 cask "daisydisk"
 cask "dash"
 cask "devtoys"
 cask "discord"
 cask "dropbox"
-cask "fig"
 cask "firefox"
 cask "font-awesome-terminal-fonts"
 cask "font-cascadia-code"
@@ -120,22 +118,16 @@ cask "font-inconsolata"
 cask "font-input"
 cask "font-sans-forgetica"
 cask "fork"
-cask "gimp"
-cask "github"
 cask "gitup"
 cask "gog-galaxy"
 cask "gzdoom"
-cask "inkscape"
 cask "itch"
 cask "iterm2"
-cask "kaleidoscope"
 cask "keybase"
-cask "libreoffice"
 cask "little-snitch"
 cask "macdown"
 cask "micro-snitch"
 cask "microblog"
-cask "microsoft-edge"
 cask "minecraft"
 cask "mockoon"
 cask "monodraw"
@@ -162,53 +154,12 @@ cask "steam"
 cask "sublime-merge"
 cask "teamviewer"
 cask "telegram"
-cask "textual"
 cask "tor-browser"
 cask "trailer"
 cask "transmission"
-cask "twitch"
 cask "vanilla"
 cask "visual-studio-code"
 cask "vlc"
 cask "whalebird"
 cask "wwdc"
 cask "xcodes"
-mas "1Blocker", id: 1365531024
-mas "Amphetamine", id: 937984704
-mas "Battery Health 2", id: 1120214373
-mas "BetterSnapTool", id: 417375580
-mas "Bitwarden", id: 1352778147
-mas "Boop", id: 1518425043
-mas "Buildwatch", id: 1523347474
-mas "Cat Quest II", id: 1466977536
-mas "CCMenu", id: 603117688
-mas "Deckset", id: 847496013
-mas "Deliveries", id: 290986013
-mas "Dependencies", id: 1538972026
-mas "DevCleaner", id: 1388020431
-mas "Developer", id: 640199958
-mas "Display Menu", id: 549083868
-mas "DuckDuckGo Privacy Essentials", id: 1482920575
-mas "GIPHY CAPTURE", id: 668208984
-mas "Jira", id: 1475897096
-mas "MarsEdit", id: 1198319098
-mas "Meeter", id: 1510445899
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Mini Motorways", id: 1456188526
-mas "Neo Cab", id: 1464869396
-mas "Overlap", id: 1516950324
-mas "Paste JSON as Code • quicktype", id: 1330801220
-mas "Playgrounds", id: 1496833156
-mas "Pocket", id: 568494494
-mas "Reeder", id: 1449412482
-mas "Save to Pocket", id: 1477385213
-mas "SourceryPro", id: 1561780836
-mas "Tailscale", id: 1475387142
-mas "TestFlight", id: 899247664
-mas "The Unarchiver", id: 425424353
-mas "ToothFairy", id: 1191449274
-mas "Transporter", id: 1450874784
-mas "Trello", id: 1278508951
-mas "Tweetbot", id: 1384080005
-mas "Twitter", id: 1482454543
-mas "WireGuard", id: 1451685025
