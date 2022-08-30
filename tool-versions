@@ -1,5 +1,6 @@
-nodejs 12.16.1
-python 3.9.2
+nodejs 18.7.0
+python 3.10.6
 ruby 3.1.2
-rust stable
-swiftlint 0.47.1
+rust 1.63.0
+swiftlint 0.49.0
+golang 1.19

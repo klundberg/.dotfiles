@@ -18,10 +18,6 @@ brew "act"
 brew "aircrack-ng"
 brew "gettext"
 brew "aria2"
-brew "autoconf"
-brew "automake"
-brew "libtool"
-brew "libyaml"
 brew "asdf"
 brew "bash-completion"
 brew "bat"
@@ -90,15 +86,12 @@ brew "getsentry/tools/sentry-cli"
 brew "kiliankoe/formulae/swift-outdated"
 brew "mono0926/license-plist/license-plist"
 brew "robotsandpencils/made/xcodes"
-brew "swiftdocorg/formulae/swift-doc", link: false
 brew "thoughtbot/formulae/rcm"
 cask "1password-beta"
 cask "1password-cli"
 cask "8bitdo-ultimate-software"
 cask "adoptopenjdk8"
-cask "android-studio", args: { appdir: "/Volumes/External/Applications" }
 cask "bartender"
-cask "boostnote"
 cask "brave-browser"
 cask "charles"
 cask "daisydisk"
@@ -116,7 +109,6 @@ cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-inconsolata"
 cask "font-input"
-cask "font-sans-forgetica"
 cask "fork"
 cask "gitup"
 cask "gog-galaxy"
@@ -128,6 +120,7 @@ cask "little-snitch"
 cask "macdown"
 cask "micro-snitch"
 cask "microblog"
+cask "mimestream"
 cask "minecraft"
 cask "mockoon"
 cask "monodraw"
@@ -147,7 +140,7 @@ cask "secretive"
 cask "sf-symbols"
 cask "sketch"
 cask "slack"
-cask "sony-ps4-remote-play"
+cask "sony-ps-remote-play"
 cask "spotify"
 cask "stats"
 cask "steam"
@@ -163,3 +156,29 @@ cask "vlc"
 cask "whalebird"
 cask "wwdc"
 cask "xcodes"
+mas "Actions", id: 1586435171
+mas "Amphetamine", id: 937984704
+mas "Boop", id: 1518425043
+mas "Buildwatch", id: 1523347474
+mas "Deliveries", id: 290986013
+mas "Dependencies", id: 1538972026
+mas "DevCleaner", id: 1388020431
+mas "Developer", id: 640199958
+mas "Display Menu", id: 549083868
+mas "DuckDuckGo Privacy for Safari", id: 1482920575
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LightBlue", id: 557428110
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Playgrounds", id: 1496833156
+mas "Pocket", id: 568494494
+mas "Shareful", id: 1522267256
+mas "SourceryPro", id: 1561780836
+mas "Steam Link", id: 1246969117
+mas "TestFlight", id: 899247664
+mas "ToothFairy", id: 1191449274
+mas "Tweetbot", id: 1384080005
+mas "Twitter", id: 1482454543
+mas "WireGuard", id: 1451685025

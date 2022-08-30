@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 if [[ -a ~/.ssh/id_rsa && $1 != '--force' ]]; then
     # skip this if we already have an ssh key
@@ -13,7 +13,9 @@ read -r EMAIL
 # generate SSH key-pair and set up ssh config
 # https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-ssh-keygen -t rsa -b 4096 -C "$EMAIL"
+KEY_ALGORITHM=ed25519
+
+ssh-keygen -t "$KEY_ALGORITHM" -C "$EMAIL"
 
 # start the ssh agent
 eval "$(ssh-agent -s)"
@@ -22,13 +24,13 @@ eval "$(ssh-agent -s)"
 echo "Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa" > ~/.ssh/config
+  IdentityFile ~/.ssh/id_$(KEY_ALGORITHM)" > ~/.ssh/config
 
 # add key to ssh-agent
-ssh-add -K ~/.ssh/id_rsa
+ssh-add -K ~/.ssh/id_"$(KEY_ALGORITHM)"
 
 # # upload public key to GitHub (api?)
 echo "Don't forget to upload the public key to github!"
 echo "Opening https://github.com/settings/ssh/new and copying public key to your pasteboard."
-pbcopy < ~/.ssh/id_rsa.pub
+pbcopy < ~/.ssh/id_"$(KEY_ALGORITHM)".pub
 open "https://github.com/settings/ssh/new"

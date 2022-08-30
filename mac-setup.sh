@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 if [ "$1" != "--lenient" ]; then
-    set -e pipefail
+    setopt pipefail
 fi
-set -uo
+setopt verbose
 
 # Get running directory of script so we can call other scripts in the same dir.
 ORIGINAL_DIR=$(pwd)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$ORIGINAL_DIR"
+cd "$ORIGINAL_DIR" || return
 
 "$DIR"/setup/create-ssh-key.sh
 "$DIR"/setup/update-symlinks.sh
@@ -16,9 +16,15 @@ cd "$ORIGINAL_DIR"
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+brew install robotsandpencils/made/xcodes
+
+xcodes update
+xcodes list
+xcodes install --latest
+
 # install asdf-managed tools and languages
 asdf() {
-    /usr/local/opt/asdf/bin/asdf "$@" || true
+    "$(brew --prefix asdf)"/libexec/bin/asdf "$@" || true
 }
 
 brew install asdf
@@ -32,22 +38,16 @@ asdf plugin-add swiftlint
 
 asdf install
 
-brew install xcodes
-
-xcodes update
-xcodes list
-xcodes install --latest
-
 # install remaining things via brew-bundle
-/usr/local/bin/brew bundle --global
+brew bundle --global
 
 # set some defaults settings
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
 defaults write com.apple.finder AppleShowAllFiles TRUE
 
 # configure fish
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish # after this, we will be running in fish
+echo "$(brew --prefix)"/bin/fish | sudo tee -a /etc/shells
+chsh -s "$(brew --prefix)"/bin/fish # after this, we will be running in fish
 
 # configure oh-my-fish
 /usr/bin/curl -sSL https://get.oh-my.fish > .temp-install-omf
@@ -56,5 +56,5 @@ rm .temp-install-omf
 omf install
 omf reload
 
-cd "$ORIGINAL_DIR"
+cd "$ORIGINAL_DIR" || return
 echo "You are all set!"
