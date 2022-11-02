@@ -1,2 +1,2 @@
-export PATH=$HOME/bin:/opt/homebrew/bin:$PATH
+eval "$($(brew --prefix)/bin/brew shellenv)"
 . "$(brew --prefix asdf)/asdf.sh"

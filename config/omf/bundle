@@ -1,6 +1,4 @@
-package brew
 package config
-package spark
 package xcode
 theme bobthefish
 theme default
