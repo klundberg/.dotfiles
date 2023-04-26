@@ -11,5 +11,5 @@ The `pre-clone-setup.sh` script is intended to be run from a brand new machine, 
 To run it, execute this command from your console:
 
 ```sh
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/klundberg/.dotfiles/master/pre-clone-setup.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/klundberg/.dotfiles/main/pre-clone-setup.sh)"
 ```
