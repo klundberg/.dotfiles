@@ -16,11 +16,14 @@ cd "$ORIGINAL_DIR" || return
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
+PATH=$PATH:/opt/homebrew/bin
+
 brew install robotsandpencils/made/xcodes
+brew install aria2
 
 xcodes update
 xcodes list
-xcodes install --latest
+xcodes install --latest --experimental-unxip --select
 
 # install asdf-managed tools and languages
 asdf() {

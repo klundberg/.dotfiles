@@ -13,9 +13,7 @@ read -r EMAIL
 # generate SSH key-pair and set up ssh config
 # https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-KEY_ALGORITHM=ed25519
-
-ssh-keygen -t "$KEY_ALGORITHM" -C "$EMAIL"
+ssh-keygen -t "ed25519" -C "$EMAIL"
 
 # start the ssh agent
 eval "$(ssh-agent -s)"
@@ -24,13 +22,13 @@ eval "$(ssh-agent -s)"
 echo "Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_$(KEY_ALGORITHM)" > ~/.ssh/config
+  IdentityFile ~/.ssh/id_ed25519" > ~/.ssh/config
 
 # add key to ssh-agent
-ssh-add -K ~/.ssh/id_"$(KEY_ALGORITHM)"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 
 # # upload public key to GitHub (api?)
 echo "Don't forget to upload the public key to github!"
 echo "Opening https://github.com/settings/ssh/new and copying public key to your pasteboard."
-pbcopy < ~/.ssh/id_"$(KEY_ALGORITHM)".pub
+pbcopy < ~/.ssh/id_ed25519.pub
 open "https://github.com/settings/ssh/new"
