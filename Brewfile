@@ -26,6 +26,7 @@ brew "bsdmake"
 brew "fontconfig"
 brew "pkg-config"
 brew "carthage"
+brew "chezmoi"
 brew "cloc"
 brew "cmake"
 brew "curl"
@@ -42,14 +43,12 @@ brew "git"
 brew "git-lfs"
 brew "git-trim"
 brew "gource"
-brew "gradle"
 brew "librsvg"
 brew "graphviz"
 brew "gti"
 brew "htop"
 brew "httpie"
 brew "hub"
-brew "hugo"
 brew "hyperfine"
 brew "imagemagick"
 brew "oniguruma"
@@ -75,6 +74,7 @@ brew "swiftgen"
 brew "swiftlint"
 brew "telnet"
 brew "thefuck"
+brew "tig"
 brew "tldr"
 brew "tokei"
 brew "topgrade"
@@ -87,10 +87,9 @@ brew "kiliankoe/formulae/swift-outdated"
 brew "mono0926/license-plist/license-plist"
 brew "robotsandpencils/made/xcodes"
 brew "thoughtbot/formulae/rcm"
-cask "1password-beta"
+cask "1password"
 cask "1password-cli"
 cask "8bitdo-ultimate-software"
-cask "adoptopenjdk8"
 cask "bartender"
 cask "brave-browser"
 cask "charles"
@@ -109,13 +108,14 @@ cask "font-hack"
 cask "font-hack-nerd-font"
 cask "font-inconsolata"
 cask "font-input"
+cask "font-monocraft"
 cask "fork"
 cask "gitup"
 cask "gog-galaxy"
 cask "gzdoom"
+cask "imazing"
 cask "itch"
 cask "iterm2"
-cask "keybase"
 cask "little-snitch"
 cask "macdown"
 cask "micro-snitch"
@@ -130,17 +130,14 @@ cask "p4v"
 cask "paw"
 cask "periphery"
 cask "postman"
-cask "powershell"
 cask "provisionql"
 cask "retroarch"
 cask "rocket"
-cask "safari-technology-preview"
 cask "scroll-reverser"
 cask "secretive"
 cask "sf-symbols"
 cask "sketch"
 cask "slack"
-cask "sony-ps-remote-play"
 cask "spotify"
 cask "stats"
 cask "steam"
@@ -153,11 +150,13 @@ cask "transmission"
 cask "vanilla"
 cask "visual-studio-code"
 cask "vlc"
-cask "whalebird"
 cask "wwdc"
 cask "xcodes"
+cask "zoom"
+mas "1Blocker", id: 1365531024
 mas "Actions", id: 1586435171
 mas "Amphetamine", id: 937984704
+mas "BetterSnapTool", id: 417375580
 mas "Boop", id: 1518425043
 mas "Buildwatch", id: 1523347474
 mas "Deliveries", id: 290986013
@@ -170,15 +169,20 @@ mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LightBlue", id: 557428110
+mas "MeetingBar", id: 1532419400
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Mini Motorways", id: 1456188526
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "PikaDex", id: 1509561856
 mas "Playgrounds", id: 1496833156
 mas "Pocket", id: 568494494
+mas "pullBar", id: 1601913905
+mas "RocketSim", id: 1504940162
+mas "Save to Pocket", id: 1477385213
 mas "Shareful", id: 1522267256
 mas "SourceryPro", id: 1561780836
 mas "Steam Link", id: 1246969117
 mas "TestFlight", id: 899247664
 mas "ToothFairy", id: 1191449274
-mas "Tweetbot", id: 1384080005
-mas "Twitter", id: 1482454543
 mas "WireGuard", id: 1451685025
