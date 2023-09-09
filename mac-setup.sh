@@ -42,6 +42,7 @@ asdf plugin-add swiftlint
 asdf install
 
 # install remaining things via brew-bundle
+softwareupdate --install-rosetta &> /dev/null
 brew bundle --global
 
 # set some defaults settings

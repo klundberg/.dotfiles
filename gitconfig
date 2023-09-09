@@ -55,7 +55,7 @@
 	dumbru = !git umbru | xargs -n 1 git push -d origin
 [user]
 	name = Kevin Lundberg
-	email = klundberg@starry.com
+	email = kevin@klundberg.com
 [color]
 	ui = true
 [branch]
