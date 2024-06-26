@@ -4,8 +4,6 @@ tap "browsh-org/browsh"
 tap "gcenx/wine"
 tap "getsentry/tools"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "kiliankoe/formulae"
 tap "menubar-apps/menubar-apps"
 tap "mono0926/license-plist"
@@ -16,7 +14,6 @@ tap "thoughtbot/formulae"
 tap "vapor/tap"
 brew "act"
 brew "aircrack-ng"
-brew "gettext"
 brew "aria2"
 brew "asdf"
 brew "bash-completion"
@@ -80,7 +77,6 @@ cask "8bitdo-ultimate-software"
 cask "altserver"
 cask "applepi-baker"
 cask "arc"
-cask "bartender"
 cask "charles"
 cask "coconutbattery"
 cask "daisydisk"
@@ -109,7 +105,6 @@ cask "gzdoom"
 cask "heroic"
 cask "imazing"
 cask "itch"
-cask "iterm2"
 cask "jirabar"
 cask "little-snitch"
 cask "macdown"
@@ -122,13 +117,12 @@ cask "monodraw"
 cask "mullvad-browser"
 cask "multipatch"
 cask "netnewswire"
-cask "openemu"
 cask "p4v"
-cask "paw"
 cask "periphery"
 cask "postman"
 cask "protonvpn"
 cask "provisionql"
+cask "rapidapi"
 cask "raspberry-pi-imager"
 cask "retroarch-metal"
 cask "rocket"
@@ -165,25 +159,18 @@ mas "BetterSnapTool", id: 417375580
 mas "Black Ink", id: 1487333695
 mas "Boop", id: 1518425043
 mas "Buildwatch", id: 1523347474
-mas "Deliveries", id: 290986013
 mas "Dependencies", id: 1538972026
 mas "DetailsPro", id: 1524366536
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Display Menu", id: 549083868
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
-mas "FANTASIAN", id: 1517339045
 mas "FileZilla Pro", id: 1298486723
-mas "Finity", id: 1071698434
 mas "Hidden Bar", id: 1452453066
 mas "Ivory", id: 6444602274
-mas "Keynote", id: 409183694
 mas "LightBlue", id: 557428110
 mas "MeetingBar", id: 1532419400
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Mini Motorways", id: 1456188526
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
 mas "Pocket", id: 568494494
 mas "pullBar", id: 1601913905
@@ -195,13 +182,11 @@ mas "Steam Link", id: 1246969117
 mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
 mas "ToothFairy", id: 1191449274
-mas "WHAT THE CAR?", id: 1534708672
 mas "WireGuard", id: 1451685025
 vscode "christian-kohler.npm-intellisense"
 vscode "codezombiech.gitignore"
 vscode "davidanson.vscode-markdownlint"
 vscode "donjayamanne.githistory"
-vscode "dracula-theme-pro.theme-dracula-pro"
 vscode "editorconfig.editorconfig"
 vscode "efanzh.graphviz-preview"
 vscode "eriklynd.json-tools"
@@ -220,6 +205,7 @@ vscode "kevinkyang.auto-comment-blocks"
 vscode "kumar-harsh.graphql-for-vscode"
 vscode "mariomatheu.syntax-project-pbxproj"
 vscode "mechatroner.rainbow-csv"
+vscode "ms-azuretools.vscode-docker"
 vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.python"
