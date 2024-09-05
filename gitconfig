@@ -34,8 +34,8 @@
 	commitcount = !git rev-list HEAD | wc -l
 	cc = commitcount
 	# merged branch operations
-	mbu = !git branch --merged | grep -v \"[\\*\\+]\" | grep -E -v \"^\\s*(master|main|develop)$\"
-	mb = !git mbu | grep -v "hotfix[/-].*" | grep -v "release[/\\-].*"
+	mbu = !git branch --merged | grep -v \"[\\*\\+]\" | grep -E -v \"^\\s*(master|main|develop)\\$\"
+	mb = !git mbu | grep -v "hotfix[/-].*" | grep -v "release[/-].*"
 	dmb = !git mb | xargs -n 1 git branch -d
 	dmbu = !git mbu | xargs -n 1 git branch -d
 	# remote merged branch operations
@@ -44,7 +44,7 @@
 	dmbr = !git mbr | xargs -n 1 git push -d origin
 	dmbru = !git mbru | xargs -n 1 git push -d origin
 	# unmerged branch operations
-	umbu = !git branch --no-merged | grep -v \"[\\*\\+]\"  | grep -E -v \"^\\s*(master|main|develop)$\"
+	umbu = !git branch --no-merged | grep -v \"[\\*\\+]\" | grep -E -v \"^\\s*(master|main|develop)\\$\"
 	umb = !git umbu | grep -v "hotfix[/-].*" | grep -v "release[/-].*"
 	dumb = !git umb | xargs -n 1 git branch -D
 	dumbu = !git umbu | xargs -n 1 git branch -D
