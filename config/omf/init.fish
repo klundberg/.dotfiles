@@ -6,10 +6,6 @@ set --global theme_display_ruby no
 set --global theme_color_scheme terminal
 set --global theme_nerd_fonts yes
 
-# setup asdf
-set --global ASDF_DIR "$(brew --prefix asdf)/libexec"
-source "$ASDF_DIR/asdf.fish"
-
 if [ -e ~/.dotfiles/local/init.fish ]
     source ~/.dotfiles/local/init.fish
 end

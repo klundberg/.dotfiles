@@ -14,8 +14,8 @@ tap "thoughtbot/formulae"
 tap "vapor/tap"
 brew "act"
 brew "aircrack-ng"
+brew "gettext"
 brew "aria2"
-brew "asdf"
 brew "bash-completion"
 brew "oniguruma"
 brew "bat"
@@ -48,6 +48,7 @@ brew "imagemagick"
 brew "jq"
 brew "less"
 brew "mas"
+brew "mise"
 brew "ncdu"
 brew "ossp-uuid"
 brew "parallel"
@@ -76,9 +77,10 @@ cask "1password-cli"
 cask "8bitdo-ultimate-software"
 cask "altserver"
 cask "applepi-baker"
-cask "arc"
+cask "caffeine"
 cask "charles"
 cask "coconutbattery"
+cask "cursor"
 cask "daisydisk"
 cask "dash"
 cask "devtoys"
@@ -101,10 +103,12 @@ cask "font-monocraft"
 cask "fork"
 cask "gitup"
 cask "gzdoom"
+cask "handbrake"
 cask "heroic"
 cask "imazing"
 cask "itch"
 cask "jirabar"
+cask "kegworks"
 cask "little-snitch"
 cask "macdown"
 cask "micro-snitch"
@@ -117,7 +121,6 @@ cask "moonlight"
 cask "mullvad-browser"
 cask "multipatch"
 cask "netnewswire"
-cask "openemu"
 cask "openrct2"
 cask "p4v"
 cask "periphery"
@@ -140,6 +143,7 @@ cask "steam"
 cask "sublime-merge"
 cask "swiftpm-catalog"
 cask "syncthing"
+cask "tailscale"
 cask "teamviewer"
 cask "tidal"
 cask "tor-browser"
@@ -149,7 +153,6 @@ cask "vanilla"
 cask "visual-studio-code"
 cask "vlc"
 cask "whisky"
-cask "wineskin"
 cask "wwdc"
 cask "xcodes"
 cask "youtube-to-mp3"
@@ -158,7 +161,6 @@ mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 1569813296
 mas "Actions", id: 1586435171
 mas "Amphetamine", id: 937984704
-mas "BetterSnapTool", id: 417375580
 mas "Black Ink", id: 1487333695
 mas "Boop", id: 1518425043
 mas "Buildwatch", id: 1523347474
@@ -170,24 +172,27 @@ mas "Display Menu", id: 549083868
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
 mas "FileZilla Pro", id: 1298486723
 mas "Hidden Bar", id: 1452453066
+mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 mas "LightBlue", id: 557428110
 mas "MeetingBar", id: 1532419400
-mas "Microsoft Remote Desktop", id: 1295203466
+mas "Mona", id: 1659154653
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
-mas "Pocket", id: 568494494
+mas "Plinky Mini", id: 6473683112
 mas "pullBar", id: 1601913905
+mas "Roam", id: 6469834197
 mas "RocketSim", id: 1504940162
 mas "Save to Pocket", id: 1477385213
 mas "Shareful", id: 1522267256
 mas "SourceryPro", id: 1561780836
 mas "Steam Link", id: 1246969117
-mas "Tailscale", id: 1475387142
 mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
 mas "ToothFairy", id: 1191449274
+mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
 vscode "christian-kohler.npm-intellisense"
 vscode "codezombiech.gitignore"
@@ -199,6 +204,7 @@ vscode "efanzh.graphviz-preview"
 vscode "eriklynd.json-tools"
 vscode "esbenp.prettier-vscode"
 vscode "felipecaputo.git-project-manager"
+vscode "fill-labs.dependi"
 vscode "fisheva.eva-theme"
 vscode "fwcd.kotlin"
 vscode "geeklearningio.graphviz-markdown-preview"
@@ -227,7 +233,6 @@ vscode "orta.playdate"
 vscode "pkief.material-icon-theme"
 vscode "quicktype.quicktype"
 vscode "rust-lang.rust-analyzer"
-vscode "serayuzgur.crates"
 vscode "shakram02.bash-beautify"
 vscode "shopify.ruby-lsp"
 vscode "sidneys1.gitconfig"

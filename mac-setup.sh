@@ -25,21 +25,9 @@ xcodes update
 xcodes list
 xcodes install --latest --experimental-unxip --select
 
-# install asdf-managed tools and languages
-asdf() {
-    "$(brew --prefix asdf)"/libexec/bin/asdf "$@" || true
-}
-
-brew install asdf
-
-asdf plugin-add nodejs
-asdf plugin-add python
-asdf plugin-add ruby
-asdf plugin-add rust
-asdf plugin-add golang
-asdf plugin-add swiftlint
-
-asdf install
+# install mise-managed tools and languages
+brew install mise
+mise install -y
 
 # install remaining things via brew-bundle
 softwareupdate --install-rosetta &> /dev/null
