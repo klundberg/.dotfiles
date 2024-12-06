@@ -6,6 +6,9 @@ set --global theme_display_ruby no
 set --global theme_color_scheme terminal
 set --global theme_nerd_fonts yes
 
+direnv hook fish | source
+mise activate fish | source
+
 if [ -e ~/.dotfiles/local/init.fish ]
     source ~/.dotfiles/local/init.fish
 end
