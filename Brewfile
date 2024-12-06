@@ -14,11 +14,11 @@ tap "thoughtbot/formulae"
 tap "vapor/tap"
 brew "act"
 brew "aircrack-ng"
+brew "gettext"
 brew "aria2"
 brew "bash-completion"
 brew "oniguruma"
 brew "bat"
-brew "icu4c@76"
 brew "boost"
 brew "bsdmake"
 brew "fontconfig"
@@ -47,6 +47,7 @@ brew "hyperfine"
 brew "imagemagick"
 brew "jq"
 brew "less"
+brew "libyaml"
 brew "mas"
 brew "mise"
 brew "ncdu"
@@ -57,7 +58,6 @@ brew "prettyping"
 brew "proctools"
 brew "shellcheck"
 brew "sourcery"
-brew "swift-format"
 brew "swift-protobuf"
 brew "swiftformat"
 brew "swiftlint"
@@ -109,6 +109,7 @@ cask "itch"
 cask "jirabar"
 cask "kegworks"
 cask "keyboardcleantool"
+cask "libreoffice"
 cask "little-snitch"
 cask "macdown"
 cask "micro-snitch"
@@ -128,6 +129,7 @@ cask "postman"
 cask "provisionql"
 cask "rapidapi"
 cask "raspberry-pi-imager"
+cask "raycast"
 cask "retroarch-metal"
 cask "rocket"
 cask "scroll-reverser"
@@ -149,6 +151,7 @@ cask "trailer"
 cask "transmission"
 cask "vanilla"
 cask "visual-studio-code"
+cask "vivaldi"
 cask "vlc"
 cask "whisky"
 cask "wwdc"
@@ -172,7 +175,6 @@ mas "Display Menu", id: 549083868
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
 mas "FileZilla Pro", id: 1298486723
 mas "Hidden Bar", id: 1452453066
-mas "iMovie", id: 408981434
 mas "Ivory", id: 6444602274
 mas "Keynote", id: 409183694
 mas "LightBlue", id: 557428110
@@ -183,12 +185,15 @@ mas "Pages", id: 409201541
 mas "Playgrounds", id: 1496833156
 mas "Plinky Mini", id: 6473683112
 mas "pullBar", id: 1601913905
+mas "Ridiculous Fishing", id: 1610164691
 mas "Roam", id: 6469834197
 mas "RocketSim", id: 1504940162
 mas "Shareful", id: 1522267256
+mas "Shovel Knight Dig", id: 1538097794
 mas "SourceryPro", id: 1561780836
 mas "Steam Link", id: 1246969117
 mas "TestFlight", id: 899247664
+mas "The Unarchiver", id: 425424353
 mas "ToothFairy", id: 1191449274
 mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
@@ -213,10 +218,8 @@ vscode "grapecity.gc-excelviewer"
 vscode "ibm.output-colorizer"
 vscode "jasonnutter.vscode-codeowners"
 vscode "kevinkyang.auto-comment-blocks"
-vscode "kumar-harsh.graphql-for-vscode"
 vscode "mariomatheu.syntax-project-pbxproj"
 vscode "mechatroner.rainbow-csv"
-vscode "ms-azuretools.vscode-docker"
 vscode "ms-python.debugpy"
 vscode "ms-python.isort"
 vscode "ms-python.python"
@@ -229,7 +232,6 @@ vscode "ms-vscode.cmake-tools"
 vscode "ms-vscode.makefile-tools"
 vscode "ms-vscode.remote-explorer"
 vscode "ms-vsliveshare.vsliveshare"
-vscode "mxschmitt.postscript"
 vscode "orta.playdate"
 vscode "pkief.material-icon-theme"
 vscode "quicktype.quicktype"
@@ -247,4 +249,3 @@ vscode "timonwong.shellcheck"
 vscode "twxs.cmake"
 vscode "tyriar.sort-lines"
 vscode "vadimcn.vscode-lldb"
-vscode "yzhang.markdown-all-in-one"
