@@ -14,3 +14,4 @@ mkdir ~/.config &> /dev/null || true
 ln -sFfh ~/.dotfiles/config/fish ~/.config/fish
 ln -sFfh ~/.dotfiles/config/omf ~/.config/omf
 ln -sFfh ~/.dotfiles/config/mise ~/.config/mise
+ln -sFfh ~/.dotfiles/config/ghostty ~/.config/ghostty
