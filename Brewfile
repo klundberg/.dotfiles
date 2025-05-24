@@ -4,6 +4,7 @@ tap "browsh-org/browsh"
 tap "gcenx/wine"
 tap "getsentry/tools"
 tap "homebrew/bundle"
+tap "kegworks-app/kegworks"
 tap "kiliankoe/formulae"
 tap "menubar-apps/menubar-apps"
 tap "mono0926/license-plist"
@@ -54,9 +55,9 @@ brew "parallel"
 brew "pkgconf"
 brew "prettyping"
 brew "proctools"
+brew "rom-tools"
 brew "shellcheck"
 brew "sourcery"
-brew "swiftformat"
 brew "swiftlint"
 brew "telnet"
 brew "tig"
@@ -73,8 +74,8 @@ cask "1password-cli"
 cask "8bitdo-ultimate-software"
 cask "altserver"
 cask "applepi-baker"
-cask "caffeine"
 cask "charles"
+cask "chatgpt"
 cask "coconutbattery"
 cask "cursor"
 cask "daisydisk"
@@ -103,10 +104,12 @@ cask "heroic"
 cask "imazing"
 cask "istat-menus"
 cask "itch"
+cask "kegworks"
 cask "keyboardcleantool"
 cask "krita"
 cask "libreoffice"
 cask "little-snitch"
+cask "love"
 cask "macdown"
 cask "micro-snitch"
 cask "microblog"
@@ -118,7 +121,10 @@ cask "moonlight"
 cask "mullvad-browser"
 cask "multipatch"
 cask "netnewswire"
+cask "obsidian"
+cask "ollama"
 cask "openrct2"
+cask "orion"
 cask "p4v"
 cask "periphery"
 cask "postman"
@@ -143,11 +149,11 @@ cask "tidal"
 cask "tor-browser"
 cask "trailer"
 cask "transmission"
+cask "transmit"
 cask "vanilla"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
-cask "whisky"
 cask "xcodes"
 cask "youtube-to-mp3"
 cask "zoom"
@@ -159,16 +165,18 @@ mas "Apple Configurator", id: 1037126344
 mas "Black Ink", id: 1487333695
 mas "Boop", id: 1518425043
 mas "Buildwatch", id: 1523347474
-mas "Croissant", id: 6670288979
 mas "Dependencies", id: 1538972026
 mas "DetailsPro", id: 1524366536
 mas "DevCleaner", id: 1388020431
 mas "Developer", id: 640199958
 mas "Display Menu", id: 549083868
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
-mas "FileZilla Pro", id: 1298486723
+mas "Game Controller Tester", id: 1500593102
 mas "Hidden Bar", id: 1452453066
+mas "Hyperspace", id: 6739505345
 mas "Ivory", id: 6444602274
+mas "Katamari Damacy Rolling LIVE", id: 6449352814
+mas "KDE Connect", id: 1580245991
 mas "Keynote", id: 409183694
 mas "LightBlue", id: 557428110
 mas "MeetingBar", id: 1532419400
@@ -177,21 +185,26 @@ mas "NetSpot", id: 514951692
 mas "Numbers", id: 409203825
 mas "Outlanders 2", id: 1614682164
 mas "Pages", id: 409201541
-mas "Playgrounds", id: 1496833156
+mas "Parcel", id: 639968404
+mas "Pi-hole Remote", id: 1515445551
 mas "Plinky Mini", id: 6473683112
 mas "pullBar", id: 1601913905
 mas "Ridiculous Fishing", id: 1610164691
 mas "Roam", id: 6469834197
 mas "RocketSim", id: 1504940162
 mas "Shareful", id: 1522267256
-mas "Shovel Knight Dig", id: 1538097794
+mas "skDig", id: 1538097794
+mas "SonicDreamTeam", id: 1609094795
 mas "SourceryPro", id: 1561780836
 mas "Steam Link", id: 1246969117
+mas "Swift Playground", id: 1496833156
 mas "TestFlight", id: 899247664
 mas "The Unarchiver", id: 425424353
 mas "ToothFairy", id: 1191449274
 mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
+mas "Wylde Flowers", id: 1458605549
+vscode "bschulte.love"
 vscode "christian-kohler.npm-intellisense"
 vscode "codezombiech.gitignore"
 vscode "davidanson.vscode-markdownlint"
@@ -207,12 +220,15 @@ vscode "fisheva.eva-theme"
 vscode "fwcd.kotlin"
 vscode "geeklearningio.graphviz-markdown-preview"
 vscode "ginfuru.ginfuru-vscode-jekyll-syntax"
+vscode "github.copilot"
+vscode "github.copilot-chat"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "grapecity.gc-excelviewer"
 vscode "ibm.output-colorizer"
 vscode "jasonnutter.vscode-codeowners"
 vscode "kevinkyang.auto-comment-blocks"
+vscode "llvm-vs-code-extensions.lldb-dap"
 vscode "mariomatheu.syntax-project-pbxproj"
 vscode "mechatroner.rainbow-csv"
 vscode "ms-python.debugpy"
@@ -230,17 +246,19 @@ vscode "ms-vsliveshare.vsliveshare"
 vscode "orta.playdate"
 vscode "pkief.material-icon-theme"
 vscode "quicktype.quicktype"
+vscode "redhat.vscode-xml"
 vscode "rust-lang.rust-analyzer"
 vscode "shakram02.bash-beautify"
 vscode "shopify.ruby-lsp"
 vscode "sidneys1.gitconfig"
 vscode "skyapps.fish-vscode"
-vscode "sswg.swift-lang"
 vscode "stephanvs.dot"
 vscode "sumneko.lua"
+vscode "swiftlang.swift-vscode"
 vscode "tamasfe.even-better-toml"
 vscode "theaflowers.witch-hazel"
 vscode "timonwong.shellcheck"
+vscode "tomblind.local-lua-debugger-vscode"
 vscode "twxs.cmake"
 vscode "tyriar.sort-lines"
 vscode "vadimcn.vscode-lldb"
